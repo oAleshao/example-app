@@ -27,7 +27,7 @@ Route::get('/genre/{genre:slug}', [MainController::class, 'genre'])->name('genre
 
 Route::middleware(['auth', 'is.admin'])->prefix('admin')->group(function () {
     Route::resource('/genres', GenresController::class);
-    Route::resource('/reviews', ReviewsController::class)->name('index', 'admin.reviews');
+    Route::resource('/reviews', ReviewsController::class);
     Route::resource('/books', BookController::class);
 });
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Genre;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -12,7 +13,8 @@ class MainController extends Controller
     {
 
         $books = Book::latest()->limit(5)->get();
-        return view('client.index', compact('books'));
+        $reviews = Review::latest()->limit(10)->get();
+        return view('client.index', compact('books', 'reviews'));
     }
 
     function book(Book $book)

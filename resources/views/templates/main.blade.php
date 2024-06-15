@@ -32,7 +32,6 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item"><a class="nav-link" href="{{route("Home")}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route("contacts")}}">Contacts</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route("admin.reviews")}}">Reviews</a></li>
                           <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                                    Genres

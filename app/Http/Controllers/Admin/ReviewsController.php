@@ -40,9 +40,10 @@ class ReviewsController extends Controller
         $review = Review::create($request->all());
         $review->save();
 
+        $books = Book::latest()->limit(5)->get();
         $reviews = Review::all()->reverse();
-        return view('admin.reviews.index', compact('reviews'));
-        //return to_route('reviews.index');
+        return view('client..index', compact('books', 'reviews'));
+        //return to_route('client.index');
     }
 
     /**
@@ -72,8 +73,9 @@ class ReviewsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Review $review)
     {
-        //
+        $review->delete();
+        return to_route('reviews.index');
     }
 }
